@@ -14,4 +14,17 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+  <ion-list>
+  <ion-item *ngFor="let item of stores">
+    <p>{{ item.id }}</p>
+    <p>{{ item.nome }}</p>
+  </ion-item>
+
+  <input type="text" [(ngModel)]="favStores.nome">
+  <button (click)="favStores.nome = 'xota'"> Muda texto </button>
+
+  <ion-item *ngIf="stores.length == 0">
+    <h2>Nenhum animal cadastrado</h2>
+  </ion-item>
+</ion-list>
 </ion-content>
